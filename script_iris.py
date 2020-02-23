@@ -17,4 +17,4 @@ pca
 pca = PCA()
 pca.fit_transform(X)
 plt = pca.plot(y, target_names, title='PCA of IRIS dataset', plot_ellipse=True)
-plt.show()
+plt.savefig('output/pca_iris.png')
