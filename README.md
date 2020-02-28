@@ -51,3 +51,8 @@ three types of wines.
 After normalisation, we pick a wine sample at random from the original dataset,
 and compute PCA with the remaining data.
 Finally we use the trained model to verify the origin of the sample.
+
+![PCA](output/pca_wine.png?raw=true "PCA")
+
+
+
