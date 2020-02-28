@@ -22,7 +22,7 @@ lower dimensional representation.
 
 # USAGE
 
-A dataset can be viewed as a matrix X of N_s samples and N_c columns, each column
+A dataset can be viewed as a matrix X of N$_s$ samples and N_c columns, each column
 representing the distribution of population variables, and a vector y representing
 class information.
 
