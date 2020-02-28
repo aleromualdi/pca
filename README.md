@@ -42,17 +42,16 @@ different wine samples and relative origin information, it can be used to
 visually verify the origin of new samples, checking whether they are projected
 within the confidence ellipsis of their relative cluster.
 
-In the example, data from http://archive.ics.uci.edu/ml/datasets/Wine contain
+In the example contained in the script *script_wine.py*, data (from http://archive.ics.uci.edu/ml/datasets/Wine) contain
 the results of a chemical analysis of wines grown
 in the same region in Italy but derived from three different cultivars.
 The analysis determined the quantities of 13 constituents found in each of the
 three types of wines.
 
 After normalisation, we pick a wine sample at random from the original dataset,
-and compute PCA with the remaining data.
+and use the PCA class from *pca.py* to train a model with the remaining data.
 Finally we use the trained model to verify the origin of the sample.
 
 ![PCA](output/pca_wine.png?raw=true "PCA")
 
-
-
+The plot shows the first two principal components with relative variance ratios of 36% and 19%, respectively
