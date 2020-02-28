@@ -54,4 +54,4 @@ Finally we use the trained model to verify the origin of the sample.
 
 ![PCA](output/pca_wine.png?raw=true "PCA")
 
-The plot shows the first two principal components with relative variance ratios of 36% and 19%, respectively
+The plot shows a scatter plot of the two first principal components overlaying covariance ellipsis. The principal components relative variance ratios of 36% and 19% for the, respectively are also shown.
