@@ -20,6 +20,12 @@ class PCA(object):
 
         self.pca = sklearnPCA(n_components=2)
         self.fit_executed = False
+        self.X_tr = None
+        self.Xn_tr = None
+
+    def _check_fit_executed(self):
+        if not self.fit_executed:
+            raise RuntimeError('PCA model not fit yet. Please fit data first.')
 
     def fit_transform(self, X):
         """
@@ -66,6 +72,14 @@ class PCA(object):
         return Ellipse(xy=centre, width=width, height=height,
                        angle=np.degrees(theta), **kwargs)
 
+    def add_data(self, data):
+        """
+        Add new data to the PCA
+
+        """
+        self._check_fit_executed()
+        self.Xn_tr = self.pca.transform(data)
+
     def plot(self, y=None, target_names=None, title='',
             plot_ellipse=False,
             *args, **kwargs):
@@ -84,8 +98,7 @@ class PCA(object):
         del args
         del kwargs
 
-        if not self.fit_executed:
-            raise RuntimeError('PCA model not fit yet. Please fit data first.')
+        self._check_fit_executed()
 
         evr = self.explained_variance_ratio
 
@@ -111,6 +124,15 @@ class PCA(object):
                 ell = self._get_covariance_ellipse(
                     cdata_0, cdata_1, fc=color, alpha=0.4)
                 ax.add_artist(ell)
+
+        if self.Xn_tr is not None:
+            ax.scatter(
+                self.Xn_tr[:, 0],
+                self.Xn_tr[:, 1],
+                color='k',
+                # alpha=.8,
+                lw=1,
+                label='new_data')
 
         plt.legend(loc='best', shadow=False, scatterpoints=1)
         plt.xlabel('PC$^0$ [{0:.2f} %]'.format(evr[0]))
