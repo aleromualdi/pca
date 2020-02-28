@@ -135,7 +135,7 @@ class PCA(object):
                 label='new_data')
 
         plt.legend(loc='best', shadow=False, scatterpoints=1)
-        plt.xlabel('PC$^0$ [{0:.2f} %]'.format(evr[0]))
-        plt.ylabel('PC$^1$ [{0:.2f} %]'.format(evr[1]))
+        plt.xlabel('PC$^1$ [{0:.2f} %]'.format(evr[0]))
+        plt.ylabel('PC$^2$ [{0:.2f} %]'.format(evr[1]))
         plt.title(title)
         return plt
