@@ -1,4 +1,4 @@
-# INTRO
+# Intro
 
 Principal Component Analysis (PCA) is a widely used tool to easily find
 patterns of similarity in a multivariate dataset.
@@ -20,7 +20,7 @@ Once the coefficients of the principal components are knowns, any new data point
 represented by the same variables of the original dataset can be mapped to the
 lower dimensional representation.
 
-# USAGE
+# Usage
 
 A dataset can be viewed as a matrix X of N_s samples and N_c columns, each column
 representing the distribution of population variables, and a vector y representing
@@ -33,7 +33,7 @@ confidence ellipsis for each class are drawn.
 Once the model is trained, a new sample can be mapped to the lower dimensional
 representation to overlay the scatter plot.
 
-# EXAMPLE
+# Example
 
 PCA is used in forensic life-science to verify the authenticity of a wine sample,
 once information on its chemical composition is known.
